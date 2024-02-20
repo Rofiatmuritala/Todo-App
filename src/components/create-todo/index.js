@@ -17,7 +17,7 @@ function CreateTodo() {
             <input onChange={event => 
         setTodo(event.target.value)}
                 className={styles.createTodoInput} placeholder=" Start typing ..." />
-            <button 
+            <button className={ `btn btn-pri)mary ${styles.btn}`}
             onClick={() => setTodos([...todos, todo])}>
             Create</button>
         </section>
