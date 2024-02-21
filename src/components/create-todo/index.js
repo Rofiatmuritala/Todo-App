@@ -10,16 +10,26 @@ function CreateTodo() {
     //     setTodos([...todos, todo]);
 
     // }
+    const saveTodos = () => {
+        // Save all todos
+        setTodos([...todos, todo]);
+        // Wipe the input box
+        setTodo("");
+    }
 
 
     return (
         <section className={styles.createTodoSection}>
-            <input onChange={event => 
-        setTodo(event.target.value)}
-                className={styles.createTodoInput} placeholder=" Start typing ..." />
-            <button className={ `btn btn-pri)mary ${styles.btn}`}
-            onClick={() => setTodos([...todos, todo])}>
-            Create</button>
+            <input
+            value= {todo}
+                onKeyDown={event => event.key === "Enter" && saveTodos()}
+                onChange={event =>
+                    setTodo(event.target.value)}
+                className={styles.createTodoInput} 
+                placeholder=" Start typing ..." />
+            <button className={`btn ${styles.btn}`}
+                onClick={() => saveTodos([...todos, todo])}>
+                Create</button>
         </section>
     );
 }
