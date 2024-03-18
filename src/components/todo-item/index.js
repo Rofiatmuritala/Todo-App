@@ -8,7 +8,7 @@ function TodoItem({index, todo}) {
         value="" id={index}/>
         <label
          className="form-check-label" 
-        for={index}
+        htmlFor={index}
         >{todo}</label>
 {/* Take home Assignment: Implement Single Delete */}
         <button className="btn btn-danger">Delete</button>
